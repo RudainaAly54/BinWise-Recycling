@@ -21,8 +21,7 @@ app.use(express.json());
 app.use(cookieParser());
 
 const allowedOrigins = [
-  "http://localhost:5173",
-  "http://localhost:5174",
+
   "https://bin-wise-recycle.vercel.app", // ✅ Your PRODUCTION URL
   "https://bin-wise-recycle-git-main-nourseens-projects.vercel.app"
 ];
