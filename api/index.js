@@ -51,7 +51,7 @@ app.use("/progress", progressRoutes);
 
 // Root route - place AFTER other routes
 app.get("/", (req, res) => {
-  res.json({ message: "Backend server is running ✅" });
+  res.json({ message: "Backend server is running ✅", status: "ok" });
 });
 
 // Error handling
@@ -61,5 +61,6 @@ app.use((err, req, res, next) => {
 });
 
 // Export handler for Vercel serverless functions
+// Vercel will automatically handle the Express app
 export default app;
 

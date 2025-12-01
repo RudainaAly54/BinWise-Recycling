@@ -47,8 +47,20 @@ You need to set these in Vercel Dashboard → Settings → Environment Variables
 
 ## Troubleshooting
 
-- If API routes don't work, check that `/api/index.js` exists at root
+- **404 Error on Root URL**: This is normal! For backend-only deployment, access your API at `/api` (e.g., `https://your-project.vercel.app/api`)
+- **404 Error on `/api`**: 
+  - Check that `/api/index.js` exists at root
+  - Verify environment variables are set in Vercel dashboard
+  - Check Vercel function logs in the dashboard for errors
 - If build fails, check that all dependencies are in root `package.json`
 - If MongoDB connection fails, verify `MONGODB_URL` is set correctly
-- Check Vercel function logs in the dashboard for errors
+- **CORS Errors**: Update the `allowedOrigins` array in `api/index.js` with your actual Vercel deployment URL
+
+## Testing Your API
+
+After deployment, test these URLs:
+- `https://your-project.vercel.app/api` - Should return: `{"message": "Backend server is running ✅", "status": "ok"}`
+- `https://your-project.vercel.app/api/auth/login` - Your auth endpoints
+- `https://your-project.vercel.app/api/users` - Your user endpoints
+- etc.
 
