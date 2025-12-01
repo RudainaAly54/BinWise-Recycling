@@ -2,16 +2,16 @@ import express from "express";
 import dotenv from "dotenv";
 import cookieParser from "cookie-parser";
 import cors from "cors";
-import connectDB from "../config/mongodb.js";
+import connectDB from "./config/mongodb.js";
 
 // Routes
-import authRouter from "../routes/authRoutes.js";
-import postsRouter from "../routes/postsRoutes.js";
-import usersRouter from "../routes/userRoutes.js";
-import pickupRoutes from "../routes/pickupRoutes.js";
-import deliveryAgentRoutes from "../routes/deliveryAgentRoutes.js";
-import centersRoutes from "../routes/centersRoutes.js";
-import progressRoutes from "../routes/progressRoutes.js";
+import authRouter from "./routes/authRoutes.js";
+import postsRouter from "./routes/postsRoutes.js";
+import usersRouter from "./routes/userRoutes.js";
+import pickupRoutes from "./routes/pickupRoutes.js";
+import deliveryAgentRoutes from "./routes/deliveryAgentRoutes.js";
+import centersRoutes from "./routes/centersRoutes.js";
+import progressRoutes from "./routes/progressRoutes.js";
 
 dotenv.config();
 const app = express();
